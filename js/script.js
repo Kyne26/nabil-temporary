@@ -2,22 +2,19 @@ const shape = document.querySelector(".tool-img");
 const links = document.querySelectorAll(".navbar a");
 
 links.forEach((link) => {
-  // kalau bukan active (Myself)
   if (!link.classList.contains("active")) {
     link.addEventListener("click", (e) => {
-      e.preventDefault(); // blok klik
+      e.preventDefault();
     });
   }
 });
 
-// setup 3D
 gsap.set(shape, {
   transformPerspective: 1000,
   transformOrigin: "center",
   force3D: true,
 });
 
-// FLOATING
 gsap.to(shape, {
   y: -20,
   duration: 2.5,
@@ -26,7 +23,6 @@ gsap.to(shape, {
   ease: "power1.inOut",
 });
 
-// ROTATE 3D
 gsap.to(shape, {
   rotateY: "+=360",
   duration: 6,
